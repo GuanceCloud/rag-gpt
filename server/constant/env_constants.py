@@ -8,7 +8,7 @@ os.environ["TOKENIZERS_PARALLELISM"] = "false"
 def check_env_variables():
     # LLM_NAME: Name of the language model being used, should be in ['OpenAI', 'ZhipuAI', 'Ollama', 'DeepSeek', 'Moonshot'].
     LLM_NAME = os.getenv('LLM_NAME')
-    llm_name_list = ['OpenAI', 'ZhipuAI', 'Ollama', 'DeepSeek', 'Moonshot']
+    llm_name_list = ['OpenAI', 'ZhipuAI', 'Ollama', 'DeepSeek', 'Moonshot', "Bailian"]
     if LLM_NAME not in llm_name_list:
         logger.error(
             f"LLM_NAME: '{LLM_NAME}' is illegal! Must be in {llm_name_list}.")

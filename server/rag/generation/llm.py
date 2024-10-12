@@ -11,6 +11,11 @@ class LLMGenerator:
             api_key = os.getenv('OPENAI_API_KEY')
             self.client = OpenAI(api_key=api_key)
             self.model_name = os.getenv('GPT_MODEL_NAME')
+        elif self.llm_name == 'Bailian':
+            api_key = os.getenv('BAILIAN_API_KEY')
+            self.client = OpenAI(api_key=api_key,
+                                 base_url="https://dashscope.aliyuncs.com/compatible-mode/v1")
+            self.model_name = os.getenv('BAILIAN_MODEL_NAME')           
         elif self.llm_name == 'ZhipuAI':
             api_key = os.getenv('ZHIPUAI_API_KEY')
             self.client = ZhipuAI(api_key=api_key)
@@ -34,7 +39,7 @@ class LLMGenerator:
             self.model_name = os.getenv('MOONSHOT_MODEL_NAME')
         else:
             raise ValueError(
-                f"Unsupported LLM_NAME: '{self.llm_name}'. Must be in['OpenAI', 'ZhipuAI', 'Ollama', 'DeepSeek', 'Moonshot']"
+                f"Unsupported LLM_NAME: '{self.llm_name}'. Must be in['OpenAI', 'ZhipuAI', 'Ollama', 'DeepSeek', 'Moonshot', 'Bailian']"
             )
 
     def generate(self,
@@ -42,7 +47,7 @@ class LLMGenerator:
                  is_streaming: bool = False,
                  is_json: bool = False):
         if is_streaming:
-            if self.llm_name in ['OpenAI', 'Ollama', 'DeepSeek', 'Moonshot']:
+            if self.llm_name in ['OpenAI', 'Ollama', 'DeepSeek', 'Moonshot', 'Bailian']:
                 response = self.client.chat.completions.create(
                     model=self.model_name,
                     messages=[{
@@ -64,7 +69,7 @@ class LLMGenerator:
                     stream=True)
             return response
         else:
-            if self.llm_name in ['OpenAI', 'Ollama', 'DeepSeek', 'Moonshot']:
+            if self.llm_name in ['OpenAI', 'Ollama', 'DeepSeek', 'Moonshot', "Bailian"]:
                 if is_json:
                     response = self.client.chat.completions.create(
                         model=self.model_name,
