@@ -9,9 +9,11 @@ from langchain.schema.document import Document
 from server.constant.constants import (OPENAI_EMBEDDING_MODEL_NAME,
                                        ZHIPUAI_EMBEDDING_MODEL_NAME,
                                        CHROMA_DB_DIR, CHROMA_COLLECTION_NAME,
-                                       OLLAMA_EMBEDDING_MODEL_NAME)
+                                       OLLAMA_EMBEDDING_MODEL_NAME,
+                                       BAILIAN_EMBEDDING_MODEL_NAME)
 from server.logger.logger_config import my_logger as logger
 from server.rag.index.embedder.zhipuai_embedder import ZhipuAIEmbeddings
+from server.rag.index.embedder.bailian_embedder import BailianEmbeddings
 
 
 class DocumentEmbedder:
@@ -23,6 +25,10 @@ class DocumentEmbedder:
             embeddings = OpenAIEmbeddings(
                 openai_api_key=os.getenv('OPENAI_API_KEY'),
                 model=OPENAI_EMBEDDING_MODEL_NAME)
+        elif self.llm_name == "Bailian":
+            embeddings = BailianEmbeddings(
+                openai_api_key=os.getenv('BAILIAN_API_KEY'),
+                model=BAILIAN_EMBEDDING_MODEL_NAME)
         elif self.llm_name == 'ZhipuAI':
             embeddings = ZhipuAIEmbeddings(
                 api_key=os.getenv('ZHIPUAI_API_KEY'),

@@ -19,6 +19,9 @@ CHROMA_COLLECTION_NAME = "mychroma_collection"
 # Name of the OpenAI model used for embedding text
 OPENAI_EMBEDDING_MODEL_NAME = "text-embedding-3-small"
 
+# Name of the Bailian model used for embedding text
+BAILIAN_EMBEDDING_MODEL_NAME = "text-embedding-v2"
+
 # Name of the ZhipuAI model used for embedding text
 ZHIPUAI_EMBEDDING_MODEL_NAME = "embedding-2"
 
