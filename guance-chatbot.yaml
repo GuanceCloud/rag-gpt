@@ -42,29 +42,20 @@ spec:
     spec:
       containers:
       - name: guance-chatbot
-        image: pubrepo.guance.com/chatbot/guancedoc:1.1
+        image: pubrepo.guance.com/chatbot/guancedoc:1.4
         imagePullPolicy: Always
         env:
-          - name: POD_NAME
-            valueFrom:
-              fieldRef:
-                fieldPath: metadata.name
-          - name: ENV_K8S_NODE_IP
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: status.hostIP
-          - name: ENV_K8S_NODE_NAME
-            valueFrom:
-              fieldRef:
-                apiVersion: v1
-                fieldPath: spec.nodeName
-          - name: DEEPSEEK_API_KEY
-            value: 
-          - name: ZHIPUAI_API_KEY
-            value: 
           - name: BOT_TOPIC
             value: "guance doc"
+          - name: LLM_NAME
+            value: Bailian
+          - name: BAILIAN_MODEL_NAME
+            value: qwen-plus
+          - name: BAILIAN_API_KEY
+            value: 
+          - name: GUANCE_SECRET
+            value: 
+
         ports:
           - containerPort: 7000
             name: port

@@ -17,7 +17,7 @@ from server.rag.index.embedder.bailian_embedder import BailianEmbeddings
 
 
 class DocumentEmbedder:
-    BATCH_SIZE = 30
+    BATCH_SIZE = 25
 
     def __init__(self) -> None:
         self.llm_name = os.getenv('LLM_NAME')
