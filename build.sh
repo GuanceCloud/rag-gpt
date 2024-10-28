@@ -1,0 +1,1 @@
+docker buildx build --platform arm64,amd64 --push -t pubrepo.jiagouyun.com/chatbot/guancedoc:1.5 .

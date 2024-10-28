@@ -9,7 +9,8 @@ def setup_logger() -> Logger:
     Returns:
         Logger: A Loguru Logger object with specified configuration.
     """
-    logger.add("error.log", rotation="10 MB")
+    
+    logger.add("storage/error.log", rotation="10 MB")
     return logger
 
 

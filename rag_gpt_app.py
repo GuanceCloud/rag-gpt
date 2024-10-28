@@ -1,6 +1,9 @@
 import os
+import sys
 from dotenv import load_dotenv
 from server.constant.env_constants import check_env_variables
+
+sys.setrecursionlimit(15500)
 
 # Load environment variables from .env file
 load_dotenv(override=True)

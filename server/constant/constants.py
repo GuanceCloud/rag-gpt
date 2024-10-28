@@ -1,8 +1,10 @@
 # Directory for storing cache files used by the DiskCache library
-DISKCACHE_DIR = "diskcache_dir"
+import os
+
+DISKCACHE_DIR = "storage/diskcache_dir"
 
 # Directory for storing SQLite database files
-SQLITE_DB_DIR = "sqlite_dir"
+SQLITE_DB_DIR = "storage/sqlite_dir"
 
 # Name of the SQLite database file
 SQLITE_DB_NAME = "mydatabase.sqlite3"
@@ -11,7 +13,7 @@ SQLITE_DB_NAME = "mydatabase.sqlite3"
 MAX_CRAWL_PARALLEL_REQUEST = 5
 
 # Directory for storing Chroma vector database files
-CHROMA_DB_DIR = "chroma_dir"
+CHROMA_DB_DIR = "storage/chroma_dir"
 
 # Name of the collection in the Chroma vector database
 CHROMA_COLLECTION_NAME = "mychroma_collection"
@@ -85,7 +87,7 @@ DELETE_ISOLATED_URL_CONTENT = 2
 MAX_ISOLATED_URL_BATCH_LENGTH = 10
 
 # Directory where downloaded local files are stored
-LOCAL_FILE_DOWNLOAD_DIR = "download_dir"
+LOCAL_FILE_DOWNLOAD_DIR = "storage/download_dir"
 
 # Maximum number of concurrent requests allowed for file writing
 MAX_CONCURRENT_WRITES = 5
