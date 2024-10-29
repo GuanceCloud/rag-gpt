@@ -10,7 +10,7 @@ SQLITE_DB_DIR = "storage/sqlite_dir"
 SQLITE_DB_NAME = "mydatabase.sqlite3"
 
 # Maximum number of concurrent requests allowed for web crawling
-MAX_CRAWL_PARALLEL_REQUEST = 5
+MAX_CRAWL_PARALLEL_REQUEST = 8
 
 # Directory for storing Chroma vector database files
 CHROMA_DB_DIR = "storage/chroma_dir"
@@ -90,7 +90,7 @@ MAX_ISOLATED_URL_BATCH_LENGTH = 10
 LOCAL_FILE_DOWNLOAD_DIR = "storage/download_dir"
 
 # Maximum number of concurrent requests allowed for file writing
-MAX_CONCURRENT_WRITES = 5
+MAX_CONCURRENT_WRITES = 32
 
 # Maximum file size (30MB in bytes)
 MAX_FILE_SIZE = 30 * 1024 * 1024
