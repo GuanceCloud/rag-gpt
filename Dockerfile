@@ -1,10 +1,10 @@
-FROM pubrepo.guance.com/chatbot/rag-gpt-base:py3.11-slim
+FROM pubrepo.jiagouyun.com/chatbot/rag-gpt-base:py3.11
 
 # Set the working directory to /app inside the container
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY . /app
+COPY ./storage /app/storage/
 
 # Grant execution permissions to the start-up script
 RUN chmod a+x start.sh
