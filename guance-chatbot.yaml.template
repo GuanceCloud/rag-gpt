@@ -48,10 +48,12 @@ spec:
           - name: BOT_TOPIC
             value: "guance doc"
           - name: LLM_NAME
-            value: Bailian
-          - name: BAILIAN_MODEL_NAME
-            value: qwen-plus
-          - name: BAILIAN_API_KEY
+            value: DeepSeek
+          - name: DEEPSEEK_MODEL_NAME
+            value: deepseek-chat
+          - name: DEEPSEEK_API_KEY
+            value: 
+          - name: ZHIPUAI_API_KEY
             value: 
           - name: GUANCE_SECRET
             value: 
